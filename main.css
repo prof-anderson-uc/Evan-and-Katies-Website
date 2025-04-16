@@ -17,7 +17,7 @@ div.wrapper {
    margin-left: 0px;
    margin-right: 0px;
    width: 960px;
-   box-shadow: 5px 5px 1px black;
+   box-shadow: 3px 3px 1px black;
 }
 
 img {
@@ -35,11 +35,13 @@ header {
 }
 
 header h1 {
+   margin-left: 1rem;
    font-size: 300%;
 }
 
 header h1 a {
    text-decoration: none;
+   color: black;
 }
 
 nav {
@@ -52,8 +54,8 @@ nav {
  nav li {
    display: inline-block;
    background-color: #ff8da1;
-   transform: skew(-20deg);
-   padding: .75rem 1.5rem;
+   transform: skew(-30deg);
+   padding: 1rem 1.5rem;
    text-decoration: none;
    color: white;
    border: .25px solid black;
@@ -61,10 +63,14 @@ nav {
  
  nav li span {
    display: inline-block;
-   transform: skew(20deg);
+   transform: skew(30deg);
    font-weight: bold;
  }
 
  nav li:hover {
    background-color: rgb(160, 231, 192);
+ }
+
+ nav a {
+   color: black;
  }
