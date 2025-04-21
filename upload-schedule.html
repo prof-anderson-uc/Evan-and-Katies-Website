@@ -1,44 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan and Katie's Website</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <script src="jquery-3.4.1.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evan and Katie's Website</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="jquery-3.4.1.js"></script>
 </head>
 <body>
 
-<div class="wrapper">
-      <header>
-         <h1><a href="index.html">Insert Title Here</a></h1>
-         <nav>
-            <ul>
-               <li><a href="index.html"><span>Home</span></a></li>
-               <li><a href="Community.html"><span>Community</span></a></li>
-               <li><a href="upload-schedule.html"><span>Schedule</span></a></li>
-               <li><a href="About-Us.html"><span>About Us</span></a></li>
-               <li><a href="FAQ.html"><span>FAQ</span></a></li>
-            </ul>
-         </nav>
-      </header>
-      
-<main class="upload">
+  <div class="wrapper">
+    <header>
+      <h1><a href="index.html">Insert Title Here</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html"><span>Home</span></a></li>
+          <li><a href="Community.html"><span>Community</span></a></li>
+          <li><a href="upload-schedule.html"><span>Schedule</span></a></li>
+          <li><a href="About-Us.html"><span>About Us</span></a></li>
+          <li><a href="FAQ.html"><span>FAQ</span></a></li>
+        </ul>
+      </nav>
+    </header>
 
-   
+    <main class="upload">
+
+      <div id="text-slider">
+
+        <div class="slide">
+          <h2>This is the <strong>first</strong> block of content.</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt eaque vel, maiores sit voluptates reiciendis quo dolores est eum tempora inventore totam iusto, pariatur reprehenderit? Labore recusandae voluptatibus tempore officia.</p>
+        </div>
+
+        <div class="slide">
+          <h2>This is the <strong>second</strong> block of content.</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos minima, totam at modi, repudiandae dolorem, quasi dignissimos dolorum tempore nihil possimus eum magnam distinctio? Quis sit debitis quod quos obcaecati.</p>
+          <p>A voluptas, libero amet eveniet officiis ratione labore laborum assumenda saepe enim exercitationem aliquam facere. Optio asperiores, porro consequuntur odio, sint blanditiis dicta beatae, in dignissimos quisquam ipsum. Iusto, iste.</p>
+        </div>
+
+        <div class="slide">
+          <h2>Here’s the <strong>third</strong> block of content.</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores optio maxime repudiandae, accusantium doloribus, repellat porro error quia sed laudantium expedita tempore assumenda laborum a perferendis id quae ducimus repellendus?</p>
+          <p>Nisi nam iste, cum maiores aperiam rerum possimus porro necessitatibus et facere ea accusantium rem, nihil ipsum nobis sint similique minus aliquam pariatur laudantium consequuntur odit. Autem ducimus minima consectetur.</p>
+          <p>Incidunt cumque adipisci debitis ad cum doloremque velit sint, id quod sapiente eveniet error, vel delectus animi iure optio eius, rerum earum facilis molestiae magni odio possimus quos soluta. Numquam.</p>
+        </div>
+        <!-- Add more as needed -->
         
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+      </div>
+      
 
 
 
-</main>
 
-<footer>
-   <small>
-      <p>hello, this is my footer</p>
-   </small>
-</footer>
+    </main>
 
- </div>
+    <footer>
+      <small>
+        <p>hello, this is my footer</p>
+      </small>
+    </footer>
+
+  </div>
+
+  <script>
+    // Wait for the DOM to be fully loaded before running the script
+    $(document).ready(function(){
+  
+      // Start with the first slide (index 0)
+      let currentSlide = 0;
+  
+      // Select all elements with class 'slide' inside #text-slider and store them in a jQuery object
+      const $slides = $('#text-slider .slide');
+  
+      // Set how long each slide will be shown before auto-advancing (in milliseconds)
+      const slideInterval = 8000;
+  
+      // This will hold the interval timer so we can reset it later
+      let autoAdvance;
+  
+      // Function to show a specific slide by index
+      function showSlide(index) {
+        // Only change slides if the new index is different from the current one
+        if (index !== currentSlide) {
+          // Fade out the current slide, then once that’s done…
+          $slides.eq(currentSlide).fadeOut(400, function() {
+            // Update the currentSlide to the new index
+            currentSlide = index;
+            // Fade in the new slide
+            $slides.eq(currentSlide).fadeIn(400);
+          });
+        }
+      }
+  
+      // Go to the next slide, looping back to the first if at the end
+      function nextSlide() {
+        const next = (currentSlide + 1) % $slides.length;
+        showSlide(next);
+      }
+  
+      // Go to the previous slide, looping to the last if at the beginning
+      function prevSlide() {
+        const prev = (currentSlide - 1 + $slides.length) % $slides.length;
+        showSlide(prev);
+      }
+  
+      // Start automatic slide advancement
+      function startAutoAdvance() {
+        autoAdvance = setInterval(nextSlide, slideInterval);
+      }
+  
+      // Restart the auto-advance timer (useful after manual button clicks)
+      function resetAutoAdvance() {
+        clearInterval(autoAdvance);
+        startAutoAdvance();
+      }
+  
+      // Hide all slides, then show the first one without animation
+      $slides.hide().eq(currentSlide).show();
+  
+      // Begin auto-advancing through slides
+      startAutoAdvance();
+  
+      // When the "Next" button is clicked, show next slide and reset the timer
+      $('#next').click(function(){
+        nextSlide();
+        resetAutoAdvance();
+      });
+  
+      // When the "Previous" button is clicked, show previous slide and reset the timer
+      $('#prev').click(function(){
+        prevSlide();
+        resetAutoAdvance();
+      });
+  
+    });
+  </script>
+  
+  
+  
+  
+
 </body>
 </html>
