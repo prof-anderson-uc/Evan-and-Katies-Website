@@ -88,3 +88,48 @@ nav {
 
 
  /* FAQ CSS */
+
+         /* FAQ JQuery CSS */
+         .slider-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem;
+          }
+          
+          .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: max-content;
+            overflow-x: auto;
+          }
+          
+          .event-panel {
+            flex: 0 0 auto;
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-right: 1rem;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          }
+          
+          .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1;
+          }
+          
+          .slider-btn.left {
+            left: 5px;
+          }
+          
+          .slider-btn.right {
+            right: 5px;
+          }
