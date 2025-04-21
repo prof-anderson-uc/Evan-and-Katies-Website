@@ -6,6 +6,7 @@
     <title>Evan and Katie's Website</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
+    <script src="jquery-3.4.1.js"></script>
 </head>
 <body>
    <div class="wrapper">
@@ -22,11 +23,84 @@
          </nav>
       </header>
 
-      <main class="faq">
+   <main class="faq">
+         <h2>Frequently Asked Questions</h2>
+         
+   <section class="firsthalf">
+         <div class="drawer">
+            <h3><a href="#">Question 1</a></h3>
 
+               <div class="inner">
+                  <p></p>
+               </div>
+         </div>
 
+         <div class="drawer">
+            <h3><a href="#">Question 2</a></h3>
 
+               <div class="inner">
+                  <p></p>
+               </div>
+         </div>
 
+         <div class="drawer">
+            <h3><a href="#">Question 3</a></h3>
+
+               <div class="inner">
+                  <p></p>
+               </div>
+         </div>
+
+         <div class="drawer">
+            <h3><a href="#">Question 4</a></h3>
+
+               <div class="inner">
+                  <p></p>
+               </div>
+         </div>
+   </section>
+
+   <section class="image1FAQ">
+         <img src="" alt="">
+   </section>
+
+   <section class="img2FAQ">
+         <img src="" alt="">
+   </section>
+
+   <section class="secondhalf">
+      <div class="drawer">
+         <h3><a href="#">Question 5</a></h3>
+
+            <div class="inner">
+               <p></p>
+            </div>
+      </div>
+
+      <div class="drawer">
+         <h3><a href="#">Question 6</a></h3>
+
+            <div class="inner">
+               <p></p>
+            </div>
+      </div>
+
+      <div class="drawer">
+         <h3><a href="#">Question 7</a></h3>
+
+            <div class="inner">
+               <p></p>
+            </div>
+      </div>
+
+      <div class="drawer">
+         <h3><a href="#">Question 8</a></h3>
+
+            <div class="inner">
+               <p></p>
+            </div>
+      </div>
+   </section>
 
 
       </main>
@@ -38,5 +112,12 @@
    </footer>
 
    </div>
+
+   <script>
+      $("div.drawer").click(function() {
+         $(this).find(".inner").slideToggle("slow");
+      });
+   </script>
+
 </body>
 </html>
