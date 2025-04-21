@@ -10,7 +10,7 @@
 </head>
 <body>
 
-   <div class="wrapper">
+<div class="wrapper">
       <header>
          <h1><a href="index.html">Insert Title Here</a></h1>
          <nav>
@@ -26,58 +26,8 @@
       
 <main class="upload">
 
-   <div class="slider-wrapper">
-      <button class="slider-btn left">&#10094;</button>
-    
-      <div class="slider-track">
-        <div class="event-panel">
-          <h3>April 22</h3>
-          <p>New Episode: The Office Reactions</p>
-          <span>8:00 PM EST</span>
-        </div>
-        <div class="event-panel">
-          <h3>April 25</h3>
-          <p>Movie Night: Shrek 2 Reaction</p>
-          <span>9:00 PM EST</span>
-        </div>
-        <div class="event-panel">
-          <h3>April 28</h3>
-          <p>Q&A Livestream</p>
-          <span>7:00 PM EST</span>
-        </div>
-        <div class="event-panel">
-         <h3>April 28</h3>
-         <p>Q&A Livestream</p>
-         <span>7:00 PM EST</span>
-       </div>
-       <div class="event-panel">
-         <h3>April 28</h3>
-         <p>Q&A Livestream</p>
-         <span>7:00 PM EST</span>
-       </div>
-       <div class="event-panel">
-         <h3>April 28</h3>
-         <p>Q&A Livestream</p>
-         <span>7:00 PM EST</span>
-       </div>
-       <div class="event-panel">
-         <h3>April 28</h3>
-         <p>Q&A Livestream</p>
-         <span>7:00 PM EST</span>
-       </div>
-       <div class="event-panel">
-         <h3>April 28</h3>
-         <p>Q&A Livestream</p>
-         <span>7:00 PM EST</span>
-       </div>
-       
-        <!-- Add more panels here -->
-      </div>
-    
-      <button class="slider-btn right">&#10095;</button>
-    </div>
-
-
+   
+        
 
 
 
@@ -88,29 +38,6 @@
       <p>hello, this is my footer</p>
    </small>
 </footer>
-
-<script>
-   $(document).ready(function() {
-     let scrollAmount = 0;
-     const scrollStep = 300; // pixels to scroll per click
-     const $track = $('.slider-track');
- 
-     $('.slider-btn.left').click(function() {
-       scrollAmount -= scrollStep;
-       $track.animate({ scrollLeft: scrollAmount }, 400);
-     });
- 
-     $('.slider-btn.right').click(function() {
-       scrollAmount += scrollStep;
-       $track.animate({ scrollLeft: scrollAmount }, 400);
-     });
- 
-     // Optional: Reset scroll position if overflowed or limited
-     $track.on('scroll', function () {
-       scrollAmount = $track.scrollLeft();
-     });
-   });
- </script>
 
  </div>
 </body>
