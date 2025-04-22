@@ -7,17 +7,15 @@
 body {
 	background-color: #ff8da1;
    height: 100vh;
-   display: table;
    margin: auto;
 }
 	
 div.wrapper {
    border: 2px solid black;
    background: linear-gradient(white, rgb(160, 231, 192));
-   margin-left: 0px;
-   margin-right: 0px;
-   width: 960px;
+   max-width: 960px;
    box-shadow: 3px 3px 1px black;
+   margin: auto;
 }
 
 img {
@@ -82,7 +80,33 @@ nav {
 
 
  /* Schedule CSS */
+            /* text slider */
 
+   #text-slider {
+      position: relative;
+      max-width: 700px; /* width of the entire slider area */
+      margin: 20px auto;
+      padding: 1rem; /* room inside the slider area */
+      text-align: center;
+      border: 1px solid silver;
+      border-radius: 1rem;
+      background-color: #fcfcfc; /* color inside the slider */
+      font-size: 130%; /* size of slider text */
+      line-height: 1.4;
+      }
+      
+      #text-slider h2 { /* optional heading inside slides */
+      margin-bottom: 1rem;
+      font-size: 120%;
+      }
+      
+      .slide {
+      display: none; /* hides slides */
+      }
+      
+      .slide.active {
+      display: block; /* shows the slide when button is clicked */
+      }
 
  /* About Page CSS */
 
