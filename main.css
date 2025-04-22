@@ -111,7 +111,7 @@ nav {
 
 
 .drawer a:hover {
-  background-color: #999999;
+  background-color: #ff8da1;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
    color: white;
@@ -123,18 +123,18 @@ nav {
 ---------------------------- */
 
 .inner {
-  background-color: #EEEEEE;
+  background-color: #A0D9EF;
    border-top: 1px solid black;
   line-height: 130%;
   font-size: .9em;
   padding: 1em 2em;
-  box-shadow: inset 0px 0px 25px #00000075;
+  box-shadow: inset 0px 0px 30px #00000075;
   display:none; 
 }
 
 .inner a,
 .inner a:hover {
   padding: 0;
-  background-color: #EEEEEE;
+  background-color: #A0D9EF;
 }
         
