@@ -11,15 +11,16 @@ body {
 }
 	
 div.wrapper {
-   border: 2px solid black;
+   border: 1px solid rgb(82, 82, 82);
    background: linear-gradient(white, rgb(160, 231, 192));
    max-width: 960px;
-   box-shadow: 3px 3px 1px black;
-   margin: auto;
+   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.428);
+   margin: 1rem auto;
 }
 
 img {
    max-width: 100%;
+   height: auto;
 }
 
 /* Nav/Header */
@@ -29,12 +30,12 @@ header {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 10px 5px;
+   padding: 1rem;
 }
 
 header h1 {
-   margin-left: 1rem;
-   font-size: 300%;
+   /* margin-left: 1rem; */
+   font-size: 250%;
 }
 
 header h1 a {
@@ -43,21 +44,28 @@ header h1 a {
 }
 
 nav {
-   display: flex;
-   justify-content: space-evenly;
-   gap: 1rem;
-   padding: 1rem;
+   /* display: flex; */
+   /* justify-content: space-evenly; */
+   /* gap: 1rem; */
+   /* padding: 0 0 1rem 0; */
+   margin: 0 1rem 0 0; /* adds a little space on the right */
  }
  
  nav li {
    display: inline-block;
    background-color: #ff8da1;
    transform: skew(-30deg);
-   padding: 1rem 1.5rem;
-   text-decoration: none;
-   color: white;
-   border: .25px solid black;
+   /* padding: 1rem 0.75rem; */
+   /* text-decoration: none; */
+   /* color: white; */
+   border: 0.25px solid black;
+   transition: all 1s ease;
  }
+
+ nav li:hover {
+  background-color: rgb(160, 231, 192);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.507); /* hover effect */
+}
  
  nav li span {
    display: inline-block;
@@ -65,12 +73,19 @@ nav {
    font-weight: bold;
  }
 
- nav li:hover {
-   background-color: rgb(160, 231, 192);
+ nav a {
+   color: black; /* text inside buttons */
+   padding: 1rem 0.75rem; /* clickable space in buttons */
+   display: block;
+   transition: all 1s ease;
  }
 
- nav a {
-   color: black;
+ nav a:hover {
+  transform: scale(1.1); /* hover effect */
+ }
+
+ footer {
+  clear: both;
  }
 
  /* Homepage CSS */
@@ -80,33 +95,9 @@ nav {
 
 
  /* Schedule CSS */
-            /* text slider */
 
-   #text-slider {
-      position: relative;
-      max-width: 700px; /* width of the entire slider area */
-      margin: 20px auto;
-      padding: 1rem; /* room inside the slider area */
-      text-align: center;
-      border: 1px solid silver;
-      border-radius: 1rem;
-      background-color: #fcfcfc; /* color inside the slider */
-      font-size: 130%; /* size of slider text */
-      line-height: 1.4;
-      }
-      
-      #text-slider h2 { /* optional heading inside slides */
-      margin-bottom: 1rem;
-      font-size: 120%;
-      }
-      
-      .slide {
-      display: none; /* hides slides */
-      }
-      
-      .slide.active {
-      display: block; /* shows the slide when button is clicked */
-      }
+
+
 
  /* About Page CSS */
 
@@ -162,3 +153,64 @@ nav {
   background-color: #A0D9EF;
 }
         
+
+
+
+/* Slick Carousel Styles
+   from https://kenwheeler.github.io/slick/
+---------------------------- */
+/* Entire slider area */
+.slick-slider {
+  background-color: rgb(223, 221, 221);
+}
+
+/* Styles for individual slides */
+.slide {
+  background: #f5f5f5;
+  padding: 1rem 2rem;
+  margin: 1rem 0.75rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.slide h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Adds spacing between slides */
+.slick-slide {
+  padding: 0 1rem;
+}
+
+/* Arrow buttons */
+.slick-prev, 
+.slick-next {
+  position: absolute;
+  top: 50%; /* Vertical placement */
+  transform: translateY(-50%);
+  z-index: 2;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  font-size: 0; /* hides default arrow text */
+  border: none;
+  background: transparent;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.8));
+  
+}
+
+/* Position of left arrow */
+.slick-prev {
+  left: 10px; 
+}
+
+/* Position of right arrow */
+.slick-next {
+  right: 10px;
+}
+
